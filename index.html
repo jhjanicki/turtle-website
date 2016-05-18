@@ -22,7 +22,10 @@
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
         font-family: 'Lato', sans-serif;
+        background-color:#e9e9e9;
     }
+    
+    
     .navbar .navbar-nav {
 	  	display: inline-block;
 	  	float: none;
@@ -38,16 +41,14 @@
 	  	height:70px;
 	}
 	
-
-	
 	.navbar-inverse .navbar-nav>li>a {
 		color: black;
 		font-size:20px;
 		font-weight:300;
 		padding-top:25px;
 		padding-bottom:25px;
-		padding-left:25px;
-		padding-right;25px;
+		margin-left:50px;
+		margin-right:50px;
 	}
 	
 	.navbar-inverse .navbar-nav>li>a:hover {
@@ -63,6 +64,12 @@
     	background-color: #fff;
 	}
 	
+	/* if we want to put the carousel and blocks in a container */
+	.carousel{
+    	margin-left:-14px;
+    	margin-right:-22px;
+    }
+	
 	#logo{
 		margin-top:-25px;
 		margin-bottom:-25px;
@@ -71,6 +78,86 @@
 	.navbar-toggle {
 		background-color: #333;
 	}
+	
+	
+	.blue{
+		background-color:#78C9D4;
+	}
+	
+	.gray{
+		background-color:#A5A5AF;
+	}
+	
+	.green{
+		background-color:#57BD91;
+	}
+	
+	.black{
+		background-color:#3F454C;
+	}
+	
+	.first-img-of-row{
+		margin-right:10px;
+	}
+	
+	.last-img-of-row{
+		margin-left:10px;
+	}
+	
+	.rest-of-row{
+		margin-left:10px;
+		margin-right:10px;
+	}
+	
+
+	.block.firstrow{
+		margin-top:10px;
+		margin-bottom:5px;
+	}
+
+	
+	.block{
+		margin-top:5px;
+		margin-bottom:5px;
+    	width:100%; 
+	}
+	
+	.textOverlay{	
+		padding:0px;
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height:100%;
+		color:white;
+	}
+	
+	.flex-center-vertically {
+		  display: flex;
+		  justify-content: center;
+		  flex-direction: column;
+		  height: 100%;
+	}
+
+	.row .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	img{
+		height:100%;
+		width:100%;
+	}
+	
+	@media (max-width: 1200px) {
+		.navbar-inverse .navbar-nav>li>a {
+			margin-left:20px;
+			margin-right:20px;
+		}
+	
+	}
+	
+	
 	@media (max-width: 768px) {
 		.navbar .navbar-nav {
 			display: inline-block;
@@ -138,55 +225,113 @@
         <!-- /.container -->
     </nav>
 
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
-  <!-- Indicators -->
+	
+	<div class="container">
+	
+	
+		<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+		  <!-- Indicators -->
   
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item active"> <img src="images/slider3.jpg" style="width:100%" alt="First slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Slide 1</h1>
-          <p>Aenean a rutrum nulla. Vestibulum a arcu at nisi tristique pretium.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="item"> <img src="images/slider4.jpg" style="width:100%" data-src="" alt="Second    slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Slide 2</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae egestas purus. </p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="item"> <img src="images/slider5.jpg" style="width:100%" data-src="" alt="Third slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Slide 3</h1>
-          <p>Donec sit amet mi imperdiet mauris viverra accumsan ut at libero.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+		  <ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		  </ol>
+		  <div class="carousel-inner">
+			<div class="item active"> <img src="images/slider3.jpg" style="width:100%" alt="First slide">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1>Slide 1</h1>
+				  <p>Aenean a rutrum nulla. Vestibulum a arcu at nisi tristique pretium.</p>
+				  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+				</div>
+			  </div>
+			</div>
+			<div class="item"> <img src="images/slider4.jpg" style="width:100%" data-src="" alt="Second    slide">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1>Slide 2</h1>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae egestas purus. </p>
+				  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+				</div>
+			  </div>
+			</div>
+			<div class="item"> <img src="images/slider5.jpg" style="width:100%" data-src="" alt="Third slide">
+			  <div class="container">
+				<div class="carousel-caption">
+				  <h1>Slide 3</h1>
+				  <p>Donec sit amet mi imperdiet mauris viverra accumsan ut at libero.</p>
+				  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
   
 
-
+ 
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>Okinawa Sea Turtles</h1>
-                
+            <div class="col-xs-6 text-center">
+                <div class="block firstrow first-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/600/300/abstract" />
+                	<div class="caption">
+                        <h4 class='textOverlay flex-center-vertically'>See Map</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 text-center">
+                <div class="block firstrow rest-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
+            </div>
+            <div class="col-xs-3 text-center">
+                <div class="block firstrow last-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
             </div>
         </div>
         <!-- /.row -->
+         
+         <div class="row">
+            <div class="col-xs-3 text-center">
+                <div class="block first-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
+            </div>
+            <div class="col-xs-3 text-center">
+                <div class="block rest-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
+            </div>
+            <div class="col-xs-3 text-center">
+                <div class="block rest-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
+            </div>
+            <div class="col-xs-3 text-center">
+                <div class="block last-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/300/300/abstract" />
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+         <div class="row">
+            <div class="col-xs-6 text-center">
+                <div class="block first-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/600/300/abstract" />
+                </div>
+            </div>
+            <div class="col-xs-6 text-center">
+                <div class="block last-img-of-row">
+                	<img class="img-responsive" src="http://lorempixel.com/600/300/abstract" />
+                </div>
+            </div>
+         </div>
+         <!-- /.row -->
+    
+    
+    </div> <!-- /.container -->
 
 
 
@@ -196,6 +341,25 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    	$(document).ready(function(){
+     		 $(window).scroll(function(){
+     		 console.log($(window).scrollTop() );
+				  if($(window).scrollTop() > 200) {
+					  $( ".navbar" ).css({"opacity": "0.9","border-bottom": "none","height":"50px"});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"15px","padding-bottom":"15px"});
+					  $("#logo").css({"width":"50px","height":"50px"});
+				  }
+				  else{
+					  $( ".navbar" ).css({"opacity": "1","border-bottom": "1px solid #9d9d9d","height":"70px"});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"25px","padding-bottom":"25px"});
+					  $("#logo").css({"width":"60px","height":"60px"});
+				  }
+			  });
+		}); 
+    </script>
+    
 
 </body>
 
