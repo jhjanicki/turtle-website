@@ -187,12 +187,33 @@
 	.button a:hover{
 		text-decoration:none;
 	}
+	
+	.parallax-window {
+		/* min-height: 600px; */
+		background: transparent;
+	}
+
+	#parallax1{
+		height:100vh;
+	}
+
+	.wrapper{
+		width:70%;
+		margin-left:15%;
+		margin-right:15%;
+	}
 
 	
 	@media (max-width: 1200px) {
 		.navbar-inverse .navbar-nav>li>a {
 			margin-left:20px;
 			margin-right:20px;
+		}
+		
+		.wrapper{
+			width:80%;
+			margin-left:10%;
+			margin-right:10%;
 		}
 	
 	}
@@ -219,6 +240,12 @@
 		.navbar-inverse .navbar-nav>li>a {
 			padding-top:10px;
 			padding-bottom:10px;
+		}
+		
+		.wrapper{
+			width:90%;
+			margin-left:5%;
+			margin-right:5%;
 		}
 	}
     </style>
@@ -265,8 +292,14 @@
         <!-- /.container -->
     </nav>
 
+<div class="parallax-window" id="parallax1" data-parallax="scroll" data-image-src="images/turtle.jpg">
 	
-	<div class="container">
+</div>
+
+
+
+	
+	<div class="wrapper">
 	
 	
 		<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
@@ -384,19 +417,21 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     
+    <script src="js/parallax.js"></script>
+    
     <script>
     	$(document).ready(function(){
      		 $(window).scroll(function(){
      		 console.log($(window).scrollTop() );
-				  if($(window).scrollTop() > 200) {
-					  $( ".navbar" ).css({"opacity": "0.9","border-bottom": "none","height":"50px"});
-					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"15px","padding-bottom":"15px"});
-					  $("#logo").css({"width":"50px","height":"50px"});
+				  if($(window).scrollTop() > 500) {
+					  $( ".navbar" ).css({"opacity": "0.9","border-bottom": "none","height":"50px",'transition':'all 0.5s ease'});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"15px","padding-bottom":"15px",'transition':'all 0.5s ease'});
+					  $("#logo").css({"width":"50px","height":"50px",'transition':'all 0.5s ease'});
 				  }
 				  else{
-					  $( ".navbar" ).css({"opacity": "1","border-bottom": "1px solid #9d9d9d","height":"70px"});
-					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"25px","padding-bottom":"25px"});
-					  $("#logo").css({"width":"60px","height":"60px"});
+					  $( ".navbar" ).css({"opacity": "1","border-bottom": "1px solid #9d9d9d","height":"70px",'transition':'all 0.5s ease'});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"25px","padding-bottom":"25px",'transition':'all 0.5s ease'});
+					  $("#logo").css({"width":"60px","height":"60px",'transition':'all 0.5s ease'});
 				  }
 			  });
 		}); 
