@@ -57,7 +57,9 @@
 	
 	.navbar-inverse .navbar-nav>li>a:hover {
 		color: #9d9d9d;
-		transition: all 1s ease;
+		transition: color 1s ease;
+		border-bottom: 1px solid #9d9d9d;
+		/* padding-bottom:10px !important; */
 	}
 
 	.navbar .navbar-collapse {
@@ -70,8 +72,9 @@
 	
 	
 	#logo{
-		margin-top:-25px;
-		margin-bottom:-25px;
+	
+		margin-left:50px;
+		margin-right:50px;
 	}
 	
 	.navbar-toggle {
@@ -131,6 +134,87 @@
 		color:white;
 	}
 	
+
+	.overlay-effect img {
+		opacity: 0.9;
+		-webkit-transition: opacity 0.35s;
+		transition: opacity 0.35s;
+	}
+
+
+	.overlay-effect figcaption::before {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		bottom: 30px;
+		left: 30px;
+		border: 1px solid #fff;
+		content: '';
+	}
+
+	.overlay-effect h2 {
+		margin: 20% 0 10px 0;
+		-webkit-transition: -webkit-transform 0.35s;
+		transition: transform 0.35s;
+		-webkit-transform: translate3d(0,100%,0);
+		transform: translate3d(0,100%,0);
+	}
+
+	.overlay-effect figcaption::before,
+	.overlay-effect p {
+		opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	.overlay-effect:hover h2 {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	.overlay-effect:hover figcaption::before,
+	.overlay-effect:hover p {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+
+
+	.overlay-effect:hover img {
+		opacity: 0.4;
+	}
+	
+	
+	
+	figcaption {
+		padding: 2em;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 1.25em;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	
+	figcaption p{
+		margin-top:20px;
+	}
+	
+	figcaption::before,
+	figcaption::after {
+		pointer-events: none;
+	}
+
+	figcaption{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
 	.flex-center-vertically {
 		  display: flex;
 		  justify-content: center;
@@ -138,7 +222,7 @@
 		  height: 100%;
 	}
 
-	.row, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9{
+	.row, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-sm-3, .col-md-4, .col-md-5, .col-sm-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-sm-3, .col-md-4, .col-md-5, .col-sm-6, .col-md-7, .col-md-8, .col-md-9{
 		padding-left:0px;
 		padding-right:0px;
 		margin-left:0px;
@@ -147,20 +231,19 @@
 	
 	.button{
 		margin-bottom: 10px;
-		margin-top: 10px;
 		margin-left:auto;
 		margin-right:auto;
-		padding-top: 12px;
-		padding-bottom: 12px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		padding-left: 10px;
 		padding-right: 10px;
 		text-decoration: none;
 		font-weight: bold;
 		font-size: 12px;
 		line-height: 1.5;
+		max-width:120px;
+		min-width:120px;
 		text-transform: uppercase;
-		height: 40px;
-		width:130px;
 		background-color: none;
 		border: solid 1px white;
 		-webkit-transition: all 500ms ease;
@@ -168,6 +251,18 @@
 		-ms-transition: all 500ms ease;
 		transition: all 500ms ease;
 		text-align:center;
+	}
+	
+	.margin-top30{
+		margin-top: 30px;
+	}
+	
+	.margin-top20{
+		margin-top: 20px;
+	}
+	
+	.margin-top10{
+		margin-top: 10px;
 	}
 
 	.button:hover{
@@ -212,12 +307,99 @@
     	background-color: white; /* Modern Browsers */
 	}
 
+
+
+	@media (max-width: 1529px) AND (min-width:1008px) {
+		h2{
+			font-size:20px;
+		}
+		
+		p{
+			font-size:12px;
+		}
+		
+		.margin-top30{
+			margin-top:20px;
+		}
+	
+	}
+	
+	@media (max-width: 1008px) {
+		h2{
+			font-size:12px;
+		}
+		
+		p{
+			font-size:10px;
+		}
+		
+		.margin-top30{
+			margin-top:16px;
+		}
+		.button a{
+			font-size:10px;
+		}
+		.button{
+			min-width:50px;
+			padding:5px;
+		}
+	}
+	
+	
+	@media (max-width: 859px) AND (min-width: 769px) {
+		h2{
+			font-size:12px;
+		}
+		
+		.overlay-effect h2{
+			margin: 5px 0 5px 0;
+		}
+		
+		.overlay-effect figcaption::before {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			bottom: 20px;
+			left: 20px;
+			border: 1px solid #fff;
+			content: '';
+		}
+		
+		p{
+			font-size:10px;
+		}
+		
+		.margin-top30{
+			margin-top:0px;
+		}
+		.button a{
+			font-size:8px;
+		}
+		.button{
+			min-width:40px;
+			padding:3px;
+		}
+		
+		.button.see-map{
+			width:100px;
+		}
+		
+		.button.see-map a{
+			font-size:10px;
+		}
+	}
+	
 	
 	@media (max-width: 1200px) {
 		.navbar-inverse .navbar-nav>li>a {
 			margin-left:20px;
 			margin-right:20px;
 		}
+		
+		#logo{		
+			margin-left:20px;
+			margin-right:20px;
+		}	
 		
 		.wrapper{
 			width:80%;
@@ -256,6 +438,23 @@
 			margin-left:5%;
 			margin-right:5%;
 		}
+		
+		.button{
+			width:100px;
+			padding:10px;
+		}
+		
+		h2{
+			font-size:28px;
+		}
+		
+		p{
+			font-size:20px;
+		}
+		
+		.margin-top30{
+			margin-top:30px;
+		}
 	}
     </style>
 
@@ -286,7 +485,7 @@
                         <a href="#">Blog</a>
                     </li>
                     <li>
-                        <a href="#"><img id='logo' src='images/logo.png'/></a>
+                        <img id='logo' src='images/logo.png'/>
                     </li>
                     <li>
                         <a href="#">Turtle ID</a>
@@ -355,28 +554,28 @@
 
  
         <div class="row">
-            <div class="col-md-6 text-center">
+            <div class="col-sm-6 text-center">
                 <div class="block firstrow first-img-of-row">
                 	<img class="img-responsive" src="images/blue-rect.png" />
                 	<div class="caption">
                         <div class='textOverlay flex-center-vertically'>
-                        	<div class='button'><a>See Map</a></div>
+                        	<div class='button see-map margin-top10'><a>See Map</a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block firstrow rest-of-row">
                 	<img class="img-responsive" src="images/gray-square.png" />
                 	<div class="caption">
                         <div class='textOverlay flex-center-vertically'>
-                        	<h4> About Map </h4>
+                        	<h2> About Map </h2>
                         	<hr class='hr-about'>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block firstrow last-img-of-row">
                 	<img class="col-3 img-responsive" src="images/green-square.png" />
                 </div>
@@ -385,22 +584,30 @@
         <!-- /.row -->
          
          <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block first-img-of-row">
+                	<div class='overlay-effect'>
                 	<img class="img-responsive" src="images/black-square.png" />
+                        	<figcaption>
+                        		<h2> Sea Turtles </h2>
+                        		<p>Species in Okinawa</p>
+                        		<div class='button margin-top30'><a>See Turtle ID</a></div>
+                        	</figcaption>
+                        </div>
+                    
                 </div>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block rest-of-row">
                 	<img class="img-responsive" src="images/black-square.png" />
                 </div>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block rest-of-row">
                 	<img class="img-responsive" src="images/black-square.png" />
                 </div>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="block last-img-of-row">
                 	<img class="img-responsive" src="images/black-square.png" />
                 </div>
@@ -409,12 +616,12 @@
         <!-- /.row -->
         
          <div class="row">
-            <div class="col-md-6 text-center">
+            <div class="col-sm-6 text-center">
                 <div class="block first-img-of-row">
                 	<img class="img-responsive" src="images/green-rect.png" />
                 </div>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-sm-6 text-center">
                 <div class="block last-img-of-row">
                 	<img class="img-responsive" src="images/gray-rect.png" />
                 </div>
