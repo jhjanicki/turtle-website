@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Okinawa Sea Turtles</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+    <link href="js/leaflet/leaflet.css" rel="stylesheet">
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,900italic,900,700italic,700,400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,900,900italic,800italic,800,700italic,700,600italic,600,500italic,500' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <style>
+	
+	#footer {
+		margin-left:-10px;
+	}
+	
+	#mapContainer{
+   		width:100%;
+   		height:700px;
+   		margin-left:auto;
+   		margin-right:auto;
+   	}
+    </style>
+
+    
+</head>
+
+<body>
+
+<div id="container">
+
+   <div id="body">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                   <li>
+                        <a href="index.html">Home </a>
+                    </li>
+                    <li>
+                        <a href="map.html">Map</a>
+                    </li>
+                    <li class="active">
+                        <a href="stranding.html">Stranding</a>
+                    </li>
+                    
+                    <li>
+                        <img id='logo' src='images/logo.png'/>
+                    </li>
+                    <li>
+                        <a href="id.html">Turtle ID</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Badges</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+    
+    </nav>
+
+
+
+	
+<div class="wrapper margin-top100">
+
+
+<div class="row">
+	<div class="col-md-12">
+	<h2 class="text-center"> Sea Turtle Stranding Report Submission </h2>
+
+		<form id="ajax-contact" method="post" action="mailer.php">
+			<div class="field">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+
+			<div class="field">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+	
+			<div class="field">
+				<label for="date">Stranding Date:</label>
+				<input type="date" id="date" name="date" required>
+			</div>
+	
+			<div class="field">
+				<label for="species">Species:</label>
+				<select type="" id="species" name="species" required>
+				  <option value="green">green</option>
+				  <option value="loggerhead">loggerhead</option>
+				  <option value="hawksbill">hawksbill</option>
+				  <option value="olive ridley">olive ridley</option>
+				  <option value="unidentified">unidentified</option>
+				</select>
+		
+			</div>
+	
+			<div class="field">
+				<label for="condition">Condition:</label>
+				<select type="" id="condition" name="condition" required>
+				  <option value="alive">alive</option>
+				  <option value="fresh dead">fresh dead</option>
+				  <option value="moderately decomposed">moderately decomposed</option>
+				  <option value="severely decomposed">severely decomposed</option>
+				  <option value="dried carcass">dried carcass</option>
+				  <option value="skeleton">skeleton</option>
+				</select>
+		
+			</div>
+	
+			<div class="field">
+				<label for="sex">Sex:</label>
+				<select type="" id="sex" name="sex" required>
+				  <option value="female">female</option>
+				  <option value="male">male</option>
+				  <option value="unknown">unknown</option>
+				</select>
+		
+			</div>
+			
+			<div class="field">
+				<label for="original_disposition">Original Disposition:</label>
+				<select type="" id="original_disposition" name="original_disposition" required>
+				  <option value="beach">beach</option>
+				  <option value="boat strike">boat strike</option>
+				  <option value="entangled">entangled</option>
+				  <option value="floating">floating</option>
+				  <option value="floating">kept as pet</option>
+				  <option value="floating">incidental capture</option>
+				</select>
+		
+			</div>
+			
+			<div class="field">
+				<label for="final_disposition">Final Disposition:</label>
+				<select type="" id="final_disposition" name="final_disposition" required>
+				  <option value="leaf on beach where found">leaf on beach where found</option>
+				  <option value="buried">buried</option>
+				  <option value="pulled up on beach">pulled up on beach</option>
+				  <option value="alive and released">alive and released</option>
+				  <option value="alive and taken to rehab facility">alive and taken to rehab facility</option>
+				  <option value="incidental capture">incidental capture</option>
+				  <option value="left floating">left floating</option>
+				  <option value="carcass necropsied">carcass necropsied</option>
+				  <option value="disposition unknown">disposition unknown</option>
+				</select>
+		
+			</div>
+
+
+			<div class="field">
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+			</div>
+
+			<div class="field">
+				<button type="submit">Send</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+    
+ 
+</div> <!-- /.wrapper -->
+
+
+   
+   
+   </div><!-- end #body -->
+   <div id="footer">
+   		<p class='text-center'> Okinawa Sea Turtles 2016 </p>
+   </div>
+</div> <!-- end #container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/parallax.js"></script>
+    
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src="js/project.js"></script>
+    
+    <script>
+    
+
+    	$(document).ready(function(){
+     		 $(window).scroll(function(){
+     		 console.log($(window).scrollTop() );
+				  if($(window).scrollTop() > 500) {
+					  $( ".navbar" ).css({"opacity": "0.9","border-bottom": "1px solid #9d9d9d","height":"50px",'transition':'all 0.5s ease'});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"15px","padding-bottom":"15px",'transition':'all 0.5s ease'});
+					  $("#logo").css({"width":"50px","height":"50px",'transition':'all 0.5s ease'});
+				  }
+				  else{
+					  $( ".navbar" ).css({"opacity": "1","border-bottom": "none","height":"70px",'transition':'all 0.5s ease'});
+					  $(".navbar-inverse .navbar-nav>li>a").css({"padding-top":"25px","padding-bottom":"25px",'transition':'all 0.5s ease'});
+					  $("#logo").css({"width":"60px","height":"60px",'transition':'all 0.5s ease'});
+				  }
+			  });
+		}); 
+		
+    </script>
+    
+
+</body>
+
+</html>
